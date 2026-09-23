@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'dwh' AND table_name IN ('dwh_clients', 'dwh_sales', 'dwh_products', 'dwh_channels', 'dwh_locations')

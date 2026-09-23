@@ -1,0 +1,2 @@
+Chrome page title: Google
+Firefox page title: Google

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM dwh.dwh_sales WHERE order_completed < order_created

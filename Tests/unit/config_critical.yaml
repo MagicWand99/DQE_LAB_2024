@@ -1,0 +1,10 @@
+tests:
+  - name: No sales with a client missing from dwh_clients
+    sql: SELECT COUNT(*) FROM dwh.dwh_sales s LEFT JOIN dwh.dwh_clients c ON s.client_id = c.client_id WHERE c.client_id IS NULL
+    expected: 0
+  - name: No sales with a channel missing from dwh_channels
+    sql: SELECT COUNT(*) FROM dwh.dwh_sales s LEFT JOIN dwh.dwh_channels ch ON s.channel_id = ch.channel_id WHERE ch.channel_id IS NULL
+    expected: 0
+  - name: No sales completed before they were created
+    sql: SELECT COUNT(*) FROM dwh.dwh_sales WHERE order_completed < order_created
+    expected: 0

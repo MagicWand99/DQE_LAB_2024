@@ -1,0 +1,10 @@
+tests:
+  - name: Layer schemas lnd, dwh and dm exist
+    sql: SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name IN ('lnd', 'dwh', 'dm')
+    expected: 3
+  - name: All 5 DWH tables exist
+    sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'dwh' AND table_name IN ('dwh_clients', 'dwh_sales', 'dwh_products', 'dwh_channels', 'dwh_locations')
+    expected: 5
+  - name: Table dm.dm_main_dashboard exists
+    sql: SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'dm' AND table_name = 'dm_main_dashboard'
+    expected: 1

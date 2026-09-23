@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM dwh.dwh_sales s LEFT JOIN dwh.dwh_channels ch ON s.channel_id = ch.channel_id WHERE ch.channel_id IS NULL

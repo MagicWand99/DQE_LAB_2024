@@ -1,0 +1,2 @@
+
+[suite] Whole suite took 17.39 s

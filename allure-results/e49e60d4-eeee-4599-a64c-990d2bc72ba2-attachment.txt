@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM dwh.dwh_sales s LEFT JOIN dwh.dwh_clients c ON s.client_id = c.client_id WHERE c.client_id IS NULL
